@@ -7,4 +7,8 @@
     <string name="add">Add</string>
     <string name="cancel">Cancel</string>
     <string name="update">Update</string>
+    <string name="site">Site</string>
+    <string name="done">Done</string>
+    <string name="edit_password">Edit Password</string>
+    <string name="delete">Delete</string>
 </resources>

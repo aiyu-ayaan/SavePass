@@ -45,6 +45,21 @@ class MainActivity : AppCompatActivity() {
                 navigateToDialogFragment()
             }
         }
+        onDestinationChange()
+    }
+
+    private fun onDestinationChange() {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment -> {
+                    binding.fabAddPassword.show()
+                }
+                else -> {
+                    binding.fabAddPassword.hide()
+                }
+            }
+
+        }
     }
 
     private fun navigateToDialogFragment() {

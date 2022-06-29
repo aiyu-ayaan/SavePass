@@ -9,7 +9,7 @@ import com.ab.core.repositories.PasswordRepository
 import com.ab.core.room.PasswordModel
 import com.ab.core.scope.SavePassScope
 import com.ab.savepass.R
-import com.ab.savepass.databinding.DialogAddUpdatePasswordBinding
+import com.ab.savepass.databinding.DialogAddPasswordBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class AddUpdatePasswordDialogFragment : DialogFragment() {
+class AddPasswordDialogFragment : DialogFragment() {
     @Inject
     lateinit var repository: PasswordRepository
 
@@ -28,13 +28,15 @@ class AddUpdatePasswordDialogFragment : DialogFragment() {
     @Inject
     lateinit var aesCryptRepository: AESCryptRepository
 
-    private lateinit var binding: DialogAddUpdatePasswordBinding
+    private lateinit var binding: DialogAddPasswordBinding
 
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        binding = DialogAddUpdatePasswordBinding.inflate(layoutInflater)
+        binding = DialogAddPasswordBinding.inflate(layoutInflater)
 
-        val dialog = MaterialAlertDialogBuilder(requireContext())
+        val dialog = MaterialAlertDialogBuilder(
+            requireContext()
+        )
             .setTitle("Add Password")
             .setView(binding.root)
             .setPositiveButton(

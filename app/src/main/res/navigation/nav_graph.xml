@@ -9,18 +9,42 @@
         android:id="@+id/homeFragment"
         android:name="com.ab.savepass.ui.fragments.home.HomeFragment"
         android:label="@string/home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
     <dialog
         android:id="@+id/addUpdatePasswordDialogFragment"
-        android:name="com.ab.savepass.ui.fragments.add_password.AddUpdatePasswordDialogFragment"
+        android:name="com.ab.savepass.ui.fragments.add_password.AddPasswordDialogFragment"
         android:label="dialog_add_update_password"
-        tools:layout="@layout/dialog_add_update_password">
-        <argument
-            android:name="request"
-            app:argType="integer"
-            android:defaultValue="100" />
-    </dialog>
+        tools:layout="@layout/dialog_add_password"/>
     <action
         android:id="@+id/action_global_addUpdatePasswordDialogFragment"
         app:destination="@id/addUpdatePasswordDialogFragment" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.ab.savepass.ui.fragments.detail.DetailFragment"
+        android:label="@string/edit_password"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="passwordModel"
+            app:argType="com.ab.core.room.PasswordModel" />
+        <action
+            android:id="@+id/action_detailFragment_to_confirmDialog"
+            app:destination="@id/confirmDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/confirmDialog"
+        android:name="com.ab.savepass.ui.fragments.detail.cofirm_dialog.ConfirmDialog"
+        android:label="ConfirmDialog">
+        <argument
+            android:name="passwordModel"
+            app:argType="com.ab.core.room.PasswordModel" />
+        <action
+            android:id="@+id/action_confirmDialog_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </dialog>
 </navigation>
