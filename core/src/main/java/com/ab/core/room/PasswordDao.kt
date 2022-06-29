@@ -18,8 +18,8 @@ interface PasswordDao {
     @Query("SELECT * FROM password_table")
     fun getAllPasswords(): Flow<List<PasswordModel>>
 
-    @Query("SELECT * FROM password_table WHERE name like :name")
-    fun getPassword(name: String): Flow<List<PasswordModel>>
+    @Query("SELECT * FROM password_table WHERE username like :userName")
+    fun getPassword(userName: String): Flow<List<PasswordModel>>
 
     @Query("Delete from password_table")
     suspend fun deleteAll()

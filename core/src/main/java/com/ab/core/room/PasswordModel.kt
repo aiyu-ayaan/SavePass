@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 @Keep
 @Entity(tableName = "password_table")
 data class PasswordModel(
-    val name: String,
+    val username: String,
     val password: String,
-    val description: String,
+    val website: String,
     val createdAt: Long = System.currentTimeMillis(),
     val updatedAt: Long = System.currentTimeMillis(),
     @PrimaryKey(autoGenerate = true)

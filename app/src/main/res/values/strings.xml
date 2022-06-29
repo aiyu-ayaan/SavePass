@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">SavePass</string>
     <string name="home">Home</string>
+    <string name="name">UserName</string>
+    <string name="password">Password</string>
+    <string name="url">Url</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="update">Update</string>
 </resources>

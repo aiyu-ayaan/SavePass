@@ -10,4 +10,17 @@
         android:name="com.ab.savepass.ui.fragments.home.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" />
+    <dialog
+        android:id="@+id/addUpdatePasswordDialogFragment"
+        android:name="com.ab.savepass.ui.fragments.add_password.AddUpdatePasswordDialogFragment"
+        android:label="dialog_add_update_password"
+        tools:layout="@layout/dialog_add_update_password">
+        <argument
+            android:name="request"
+            app:argType="integer"
+            android:defaultValue="100" />
+    </dialog>
+    <action
+        android:id="@+id/action_global_addUpdatePasswordDialogFragment"
+        app:destination="@id/addUpdatePasswordDialogFragment" />
 </navigation>

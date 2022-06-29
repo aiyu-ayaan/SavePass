@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.ab.savepass.NavGraphDirections
 import com.ab.savepass.R
 import com.ab.savepass.databinding.ActivityMainBinding
 import com.ab.savepass.util.currentNavigationFragment
@@ -39,7 +40,16 @@ class MainActivity : AppCompatActivity() {
 
             collapsingToolbar.setupWithNavController(toolbar, navController, appBarConfiguration)
             setupActionBarWithNavController(navController, appBarConfiguration)
+
+            fabAddPassword.setOnClickListener {
+                navigateToDialogFragment()
+            }
         }
+    }
+
+    private fun navigateToDialogFragment() {
+        val action = NavGraphDirections.actionGlobalAddUpdatePasswordDialogFragment()
+        navController.navigate(action)
     }
 
     override fun onSupportNavigateUp(): Boolean {
