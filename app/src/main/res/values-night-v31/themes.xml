@@ -1,5 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
     <style name="Theme.SavePass" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/accent_color</item>
         <item name="colorPrimaryVariant">?attr/colorSurface</item>
@@ -10,17 +11,16 @@
         <item name="colorSecondary">@color/accent_color</item>
         <item name="colorSecondaryVariant">@color/accent_color</item>
         <item name="colorOnSecondary">@color/black</item>
+        <item name="android:navigationBarColor">?attr/colorPrimaryVariant</item>
         <item name="colorSecondaryContainer">@color/blue_bottom_nav</item>
-
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorSurface</item>
-        <!-- Customize your theme here. -->
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="bottomBar">@color/bottom_nav</item>
-        <item name="bottomSheetBackground">@color/blue_bottom_nav</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="bottomBar">@android:color/system_neutral2_800</item>
         <item name="textColor">@color/textColor</item>
         <item name="textColorSecondary">@color/textColorSecondary</item>
+        <item name="bottomSheetBackground">@android:color/system_neutral2_900</item>
 
     </style>
+
 </resources>

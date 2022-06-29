@@ -41,7 +41,7 @@ android {
 }
 
 dependencies {
-
+    implementation project(':core')
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation "com.google.android.material:material:$materail3Version"
     implementation "com.google.firebase:firebase-firestore-ktx:$firebaseFireStoreVersion"
