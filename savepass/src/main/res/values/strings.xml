@@ -28,4 +28,6 @@
     <string name="Continue">Continue</string>
     <string name="about_developer">About Developer</string>
     <string name="finger_print_enable">Finger Print</string>
+    <string name="ayaan_link">https://aiyu-ayaan-portfolio.netlify.app/</string>
+    <string name="app_link">https://github.com/aiyu-ayaan/SavePass</string>
 </resources>

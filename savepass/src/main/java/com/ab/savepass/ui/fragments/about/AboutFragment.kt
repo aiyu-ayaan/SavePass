@@ -11,6 +11,7 @@ import com.ab.core.constants.UPDATE_PASSWORD
 import com.ab.savepass.R
 import com.ab.savepass.databinding.FragmentAboutBinding
 import com.ab.savepass.util.FingerPrintHelperClass
+import com.ab.savepass.util.openCustomChromeTab
 import com.google.android.material.transition.MaterialSharedAxis
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -41,6 +42,15 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
             buttonDeleteAll.setOnClickListener {
                 navigateToDeleteAll()
             }
+            buttonAcknowledgement.setOnClickListener {
+                navigateToAcknowledgement()
+            }
+            buttonVersion.setOnClickListener {
+                navigateToVersion()
+            }
+            buttonDev.setOnClickListener {
+                navigateToDev()
+            }
             switchFingerPrint.apply {
                 isEnabled = fingerPrintHelperClass.isBiometricSupport()
                 setOnCheckedChangeListener(null)
@@ -55,6 +65,20 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
             setUpSwitch()
         }
 
+    }
+
+    private fun navigateToDev() {
+        requireContext().openCustomChromeTab(resources.getString(R.string.ayaan_link))
+    }
+
+    private fun navigateToVersion() {
+        requireContext().openCustomChromeTab(resources.getString(R.string.app_link))
+    }
+
+    private fun navigateToAcknowledgement() {
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true)
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ false)
+        findNavController().navigate(AboutFragmentDirections.actionAboutFragmentToAcknowledgementFragment())
     }
 
     private fun setUpSwitch() {

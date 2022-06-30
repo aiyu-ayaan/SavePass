@@ -109,6 +109,8 @@ class CheckPasswordFragment : Fragment(R.layout.layout_check_password) {
     }
 
     private fun navigateToHome() {
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true)
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ false)
         findNavController().navigate(CheckPasswordFragmentDirections.actionCheckPasswordFragmentToHomeFragment())
     }
 }

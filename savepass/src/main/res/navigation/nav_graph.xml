@@ -68,6 +68,9 @@
         <action
             android:id="@+id/action_aboutFragment_to_deleteAllDialogFragment"
             app:destination="@id/deleteAllDialogFragment" />
+        <action
+            android:id="@+id/action_aboutFragment_to_acknowledgementFragment"
+            app:destination="@id/acknowledgementFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -118,4 +121,9 @@
         android:id="@+id/deleteAllDialogFragment"
         android:name="com.ab.savepass.ui.fragments.about.delete_all.DeleteAllDialogFragment"
         android:label="DeleteAllDialogFragment" />
+    <fragment
+        android:id="@+id/acknowledgementFragment"
+        android:name="com.ab.savepass.ui.fragments.about.acknowledgement.AcknowledgementFragment"
+        android:label="@string/acknowledgement"
+        tools:layout="@layout/fragment_acknowledgement" />
 </navigation>

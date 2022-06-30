@@ -146,17 +146,17 @@
             android:text="@string/about_developer"
             android:textAppearance="?attr/textAppearanceCaption" />
 
-        <TextView
-            android:id="@+id/text_view_developer_name"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_dev"
+            style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_view_developer"
-            android:layout_marginStart="@dimen/grid_2"
+            android:layout_marginHorizontal="@dimen/grid_2"
             android:layout_marginTop="@dimen/grid_0_5"
-            android:padding="@dimen/grid_1_5"
+            android:gravity="start|center"
             android:text="@string/developer_name"
-            android:textAppearance="?attr/textAppearancePopupMenuHeader"
-            android:textColor="?attr/colorPrimary" />
+            app:cornerRadius="@dimen/grid_1" />
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

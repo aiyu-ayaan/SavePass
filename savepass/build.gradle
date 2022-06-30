@@ -4,7 +4,6 @@ plugins {
     id 'com.google.gms.google-services'
     id 'kotlin-parcelize'
     id "androidx.navigation.safeargs.kotlin"
-    id 'com.google.firebase.crashlytics'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
 }
@@ -45,12 +44,7 @@ dependencies {
     implementation project(':core')
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation "com.google.android.material:material:$materail3Version"
-    implementation "com.google.firebase:firebase-firestore-ktx:$firebaseFireStoreVersion"
 
-//    FireStore
-    // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:27.1.0')
-    implementation 'com.google.firebase:firebase-firestore-ktx'
 
 
 //    crashlytics
@@ -73,6 +67,7 @@ dependencies {
 
 //    Hilt
     implementation("com.google.dagger:hilt-android:$hilt_version")
+    implementation "androidx.browser:browser:$browserVersion"
     kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
 
     // Coroutines
@@ -83,10 +78,6 @@ dependencies {
     implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
-
-
-    // DataStore
-    implementation "androidx.datastore:datastore-preferences:$dataStoreVersion"
 
     //    Lottie
     implementation "com.airbnb.android:lottie:$lottiVersion"
