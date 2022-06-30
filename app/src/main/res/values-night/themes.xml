@@ -21,4 +21,9 @@
         <item name="bottomSheetBackground">@color/blue_bottom_nav</item>
 
     </style>
+    <style name="Theme.customSplash" parent="Theme.SplashScreen">
+        <item name="backgroundColor">?attr/bottomSheetBackground</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.SavePass</item>
+    </style>
 </resources>

@@ -27,4 +27,5 @@
     <string name="check_password_image">Login</string>
     <string name="Continue">Continue</string>
     <string name="about_developer">About Developer</string>
+    <string name="finger_print_enable">Finger Print</string>
 </resources>

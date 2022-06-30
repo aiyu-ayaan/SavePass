@@ -3,6 +3,7 @@ package com.ab.savepass.ui.activity.main_activity
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.viewbinding.library.activity.viewBinding
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -16,6 +17,7 @@ import com.ab.core.constants.PREF_PASSWORD
 import com.ab.savepass.NavGraphDirections
 import com.ab.savepass.R
 import com.ab.savepass.databinding.ActivityMainBinding
+import com.ab.savepass.ui.fragments.check_password.CommunicatorViewModel
 import com.ab.savepass.util.currentNavigationFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -26,6 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private val communicatorViewModel by viewModels<CommunicatorViewModel>()
 
     @Inject
     lateinit var pref: SharedPreferences
@@ -93,11 +96,15 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         if (pref.getString(PREF_PASSWORD, "") != "") {
-            getCurrentFragment()?.let {
-                navController.navigate(
-                    NavGraphDirections.actionGlobalCheckPasswordFragment()
-                )
-            }
+            navigateToCheckPassword()
+        }
+    }
+
+    private fun navigateToCheckPassword() {
+        getCurrentFragment()?.let {
+            navController.navigate(
+                NavGraphDirections.actionGlobalCheckPasswordFragment()
+            )
         }
     }
 }

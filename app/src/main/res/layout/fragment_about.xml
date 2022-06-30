@@ -16,12 +16,33 @@
         android:text="@string/setting"
         android:textAppearance="?attr/textAppearanceCaption" />
 
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_finger_print"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_setting"
+        android:layout_marginHorizontal="@dimen/grid_2"
+        android:layout_marginTop="@dimen/grid_1"
+        android:padding="@dimen/grid_1_5"
+        android:text="@string/finger_print_enable"
+        android:textAppearance="?attr/textAppearancePopupMenuHeader"
+        android:textColor="?attr/colorPrimary" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_finger_print"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switch_finger_print"
+        android:layout_marginHorizontal="@dimen/grid_2"
+        android:layout_marginTop="@dimen/grid_0_5"
+        app:dividerColor="@color/divider_color" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_change_password"
         style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/text_view_setting"
+        android:layout_below="@id/divider_finger_print"
         android:layout_marginHorizontal="@dimen/grid_2"
         android:layout_marginTop="@dimen/grid_1"
         android:gravity="start|center"
@@ -40,14 +61,14 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_delete_all"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="match_parent"
+        android:layout_width="375dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/divider_password"
         android:layout_marginHorizontal="@dimen/grid_2"
         android:layout_marginTop="@dimen/grid_0_5"
         android:gravity="start|center"
         android:text="@string/delete_all"
-        app:cornerRadius="@dimen/grid_1"/>
+        app:cornerRadius="@dimen/grid_1" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_settings"
@@ -78,7 +99,7 @@
         android:layout_marginTop="@dimen/grid_1"
         android:gravity="start|center"
         android:text="@string/acknowledgement"
-        app:cornerRadius="@dimen/grid_1"/>
+        app:cornerRadius="@dimen/grid_1" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_acknowledgement"
@@ -122,13 +143,14 @@
 
     <TextView
         android:id="@+id/text_view_developer_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/text_view_developer"
         android:layout_marginStart="@dimen/grid_2"
         android:layout_marginTop="@dimen/grid_0_5"
-        android:padding="@dimen/grid_1"
+        android:padding="@dimen/grid_1_5"
         android:text="@string/developer_name"
+        android:textAppearance="?attr/textAppearancePopupMenuHeader"
         android:textColor="?attr/colorPrimary" />
 
 
