@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context="com.ab.savepass.ui.fragments.welcome.WelcomeFragment">
+
+    <ImageView
+        android:id="@+id/image_view_welcome"
+        android:layout_width="@dimen/image_size"
+        android:layout_height="@dimen/image_size"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/grid_1"
+        android:contentDescription="@string/welcome"
+        android:src="@drawable/ic_undraw_welcome" />
+
+    <TextView
+        android:id="@+id/text_view_set_up_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image_view_welcome"
+        android:layout_marginStart="@dimen/grid_2"
+        android:layout_marginBottom="@dimen/grid_1"
+        android:text="@string/setup_password"
+        android:textAppearance="?attr/textAppearanceCaption" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlined_text_field_password"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_view_set_up_password"
+        android:layout_marginHorizontal="@dimen/grid_2"
+        android:hint="@string/password"
+        app:boxBackgroundColor="?attr/colorSurface"
+        app:boxStrokeColor="@color/mtrl_outlined_stroke_color"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:maxLength="4" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlined_text_field_password_confirm"
+        style="?attr/textInputFilledStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/outlined_text_field_password"
+        android:layout_marginHorizontal="@dimen/grid_2"
+        android:layout_marginTop="@dimen/grid_1"
+        android:hint="@string/confirm_password"
+        app:boxBackgroundColor="?attr/colorSurface"
+        app:boxStrokeColor="@color/mtrl_outlined_stroke_color"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:maxLength="4" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button_set_up_password"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/outlined_text_field_password_confirm"
+        android:layout_marginHorizontal="@dimen/grid_2"
+        android:layout_marginTop="@dimen/grid_1"
+        android:text="@string/save"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</RelativeLayout>

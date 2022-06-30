@@ -26,7 +26,5 @@
     <dimen name="min_padding_attendance">100dp</dimen>
     <dimen name="div_height">1dp</dimen>
     <dimen name="bottom_nav_height">80dp</dimen>
-    <dimen name="image_view_about_us_size">100dp</dimen>
-    <dimen name="course_image_size">120dp</dimen>
-    <dimen name="time_table_image_size">250dp</dimen>
+    <dimen name="image_size">300dp</dimen>
 </resources>

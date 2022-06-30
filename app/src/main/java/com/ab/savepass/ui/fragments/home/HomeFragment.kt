@@ -1,6 +1,9 @@
 package com.ab.savepass.ui.fragments.home
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.viewbinding.library.fragment.viewBinding
 import androidx.core.content.ContextCompat
@@ -39,6 +42,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         }
         getPasswords()
+        setHasOptionsMenu(true)
     }
 
     private fun navigateToDetail(passwordModel: PasswordModel) {
@@ -55,4 +59,29 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_home, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_about -> {
+                navigateToAbout()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun navigateToAbout() {
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true)
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ false)
+        findNavController()
+            .navigate(
+                HomeFragmentDirections.actionHomeFragmentToAboutFragment()
+            )
+    }
+
 }

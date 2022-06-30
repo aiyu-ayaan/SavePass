@@ -5,14 +5,21 @@
       <map>
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.3365" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/drawable/ic_baseline_visible.xml" value="0.3365" />
+        <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/drawable/ic_undraw_password.xml" value="0.26" />
+        <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/drawable/ic_undraw_welcome.xml" value="0.26" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/activity_main.xml" value="0.3613707165109034" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/dialog_add_password.xml" value="0.33" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/dialog_add_update_password.xml" value="0.3625" />
+        <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/fragment_about.xml" value="0.33" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/fragment_add_password.xml" value="0.3625" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/fragment_detail.xml" value="0.33" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/fragment_home.xml" value="0.3614583333333333" />
+        <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/layout_check_password.xml" value="0.3625" />
+        <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/layout_set_up_password.xml" value="0.3625" />
+        <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/layout_welcome.xml" value="0.3625" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/layout/row_home_item.xml" value="0.25" />
         <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/menu/menu_delete.xml" value="0.3625" />
+        <entry key="..\:/Android Project/Android Projects/SavePass/app/src/main/res/menu/menu_home.xml" value="0.3625" />
       </map>
     </option>
   </component>

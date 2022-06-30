@@ -11,4 +11,20 @@
     <string name="done">Done</string>
     <string name="edit_password">Edit Password</string>
     <string name="delete">Delete</string>
+    <string name="setting">Settings</string>
+    <string name="change_password">Change Password</string>
+    <string name="delete_all">Delete All</string>
+    <string name="about">About</string>
+    <string name="acknowledgement">Acknowledgement</string>
+    <string name="version">Version 1.0</string>
+    <string name="developer_name">Made By Ayaan 😊</string>
+    <string name="welcome">Welcome</string>
+    <string name="setup_password">SetUp Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="save">Save</string>
+    <string name="password_not_match">Password Not Match</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="check_password_image">Login</string>
+    <string name="Continue">Continue</string>
+    <string name="about_developer">About Developer</string>
 </resources>

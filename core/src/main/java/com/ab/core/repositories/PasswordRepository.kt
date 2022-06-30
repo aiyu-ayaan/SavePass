@@ -13,4 +13,5 @@ class PasswordRepository @Inject constructor(
     suspend fun insertPassword(password: PasswordModel) = dao.addPassword(password)
     suspend fun updatePassword(password: PasswordModel) = dao.updatePassword(password)
     suspend fun deletePassword(password: PasswordModel) = dao.deletePassword(password)
+    suspend fun deleteAllPassword() = dao.deleteAll()
 }

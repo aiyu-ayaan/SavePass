@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/welcomeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -13,12 +13,15 @@
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <dialog
         android:id="@+id/addUpdatePasswordDialogFragment"
         android:name="com.ab.savepass.ui.fragments.add_password.AddPasswordDialogFragment"
         android:label="dialog_add_update_password"
-        tools:layout="@layout/dialog_add_password"/>
+        tools:layout="@layout/dialog_add_password" />
     <action
         android:id="@+id/action_global_addUpdatePasswordDialogFragment"
         app:destination="@id/addUpdatePasswordDialogFragment" />
@@ -47,4 +50,56 @@
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
     </dialog>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.ab.savepass.ui.fragments.about.AboutFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_aboutFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_aboutFragment_to_deleteAllDialogFragment"
+            app:destination="@id/deleteAllDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.ab.savepass.ui.fragments.welcome.WelcomeFragment"
+        android:label="@string/change_password "
+        tools:layout="@layout/layout_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_checkPasswordFragment"
+            app:destination="@id/checkPasswordFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="request"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkPasswordFragment"
+        android:name="com.ab.savepass.ui.fragments.check_password.CheckPasswordFragment"
+        android:label="layout_check_password"
+        tools:layout="@layout/layout_check_password">
+        <action
+            android:id="@+id/action_checkPasswordFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_checkPasswordFragment"
+        app:destination="@id/checkPasswordFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+    <dialog
+        android:id="@+id/deleteAllDialogFragment"
+        android:name="com.ab.savepass.ui.fragments.about.delete_all.DeleteAllDialogFragment"
+        android:label="DeleteAllDialogFragment" />
 </navigation>
