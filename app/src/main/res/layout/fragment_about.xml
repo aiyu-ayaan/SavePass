@@ -1,157 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSurface"
+    android:fillViewport="true"
     tools:context="com.ab.savepass.ui.fragments.about.AboutFragment">
 
-    <TextView
-        android:id="@+id/text_view_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_1"
-        android:text="@string/setting"
-        android:textAppearance="?attr/textAppearanceCaption" />
-
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/switch_finger_print"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_view_setting"
-        android:layout_marginHorizontal="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_1"
-        android:padding="@dimen/grid_1_5"
-        android:text="@string/finger_print_enable"
-        android:textAppearance="?attr/textAppearancePopupMenuHeader"
-        android:textColor="?attr/colorPrimary" />
+        android:layout_height="match_parent"
+        android:background="?attr/colorSurface">
 
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider_finger_print"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/switch_finger_print"
-        android:layout_marginHorizontal="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_0_5"
-        app:dividerColor="@color/divider_color" />
+        <TextView
+            android:id="@+id/text_view_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_1"
+            android:text="@string/setting"
+            android:textAppearance="?attr/textAppearanceCaption" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_change_password"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider_finger_print"
-        android:layout_marginHorizontal="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_1"
-        android:gravity="start|center"
-        android:text="@string/change_password"
-        app:cornerRadius="@dimen/grid_1" />
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_finger_print"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_setting"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_1"
+            android:padding="@dimen/grid_1_5"
+            android:text="@string/finger_print_enable"
+            android:textAppearance="?attr/textAppearancePopupMenuHeader"
+            android:textColor="?attr/colorPrimary" />
 
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_change_password"
-        android:layout_marginHorizontal="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_0_5"
-        app:dividerColor="@color/divider_color" />
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_finger_print"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/switch_finger_print"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_0_5"
+            app:dividerColor="@color/divider_color" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_delete_all"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="375dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider_password"
-        android:layout_marginHorizontal="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_0_5"
-        android:gravity="start|center"
-        android:text="@string/delete_all"
-        app:cornerRadius="@dimen/grid_1" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_change_password"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider_finger_print"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_1"
+            android:gravity="start|center"
+            android:text="@string/change_password"
+            app:cornerRadius="@dimen/grid_1" />
 
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider_settings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_delete_all"
-        android:layout_marginTop="@dimen/grid_0_5"
-        app:dividerColor="@color/divider_color" />
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_change_password"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_0_5"
+            app:dividerColor="@color/divider_color" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_delete_all"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider_password"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:gravity="start|center"
+            android:text="@string/delete_all"
+            app:cornerRadius="@dimen/grid_1" />
 
-    <TextView
-        android:id="@+id/text_view_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider_settings"
-        android:layout_marginStart="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_3"
-        android:text="@string/about"
-        android:textAppearance="?attr/textAppearanceCaption" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_acknowledgement"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_view_about"
-        android:layout_marginHorizontal="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_1"
-        android:gravity="start|center"
-        android:text="@string/acknowledgement"
-        app:cornerRadius="@dimen/grid_1" />
-
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider_acknowledgement"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_acknowledgement"
-        android:layout_marginHorizontal="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_0_5"
-        app:dividerColor="@color/divider_color" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_version"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider_acknowledgement"
-        android:layout_marginHorizontal="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_0_5"
-        android:gravity="start|center"
-        android:text="@string/version"
-        app:cornerRadius="@dimen/grid_1" />
-
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider_about"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button_version"
-        android:layout_marginTop="@dimen/grid_0_5"
-        app:dividerColor="@color/divider_color" />
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_delete_all"
+            android:layout_marginTop="@dimen/grid_0_5"
+            app:dividerColor="@color/divider_color" />
 
 
-    <TextView
-        android:id="@+id/text_view_developer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/divider_about"
-        android:layout_marginStart="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_3"
-        android:text="@string/about_developer"
-        android:textAppearance="?attr/textAppearanceCaption" />
+        <TextView
+            android:id="@+id/text_view_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider_settings"
+            android:layout_marginStart="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_3"
+            android:text="@string/about"
+            android:textAppearance="?attr/textAppearanceCaption" />
 
-    <TextView
-        android:id="@+id/text_view_developer_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_view_developer"
-        android:layout_marginStart="@dimen/grid_2"
-        android:layout_marginTop="@dimen/grid_0_5"
-        android:padding="@dimen/grid_1_5"
-        android:text="@string/developer_name"
-        android:textAppearance="?attr/textAppearancePopupMenuHeader"
-        android:textColor="?attr/colorPrimary" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_acknowledgement"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_about"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_1"
+            android:gravity="start|center"
+            android:text="@string/acknowledgement"
+            app:cornerRadius="@dimen/grid_1" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_acknowledgement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_acknowledgement"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_0_5"
+            app:dividerColor="@color/divider_color" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_version"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider_acknowledgement"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:gravity="start|center"
+            android:text="@string/version"
+            app:cornerRadius="@dimen/grid_1" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_version"
+            android:layout_marginTop="@dimen/grid_0_5"
+            app:dividerColor="@color/divider_color" />
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/text_view_developer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider_about"
+            android:layout_marginStart="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_3"
+            android:text="@string/about_developer"
+            android:textAppearance="?attr/textAppearanceCaption" />
+
+        <TextView
+            android:id="@+id/text_view_developer_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_view_developer"
+            android:layout_marginStart="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_0_5"
+            android:padding="@dimen/grid_1_5"
+            android:text="@string/developer_name"
+            android:textAppearance="?attr/textAppearancePopupMenuHeader"
+            android:textColor="?attr/colorPrimary" />
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

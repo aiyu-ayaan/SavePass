@@ -30,7 +30,8 @@ class HomeAdapter(
 
         fun bind(passwordModel: PasswordModel) = binding.apply {
             textViewUser.text = passwordModel.username
-            textViewWebsite.text = passwordModel.website
+            textViewWebsite.text =
+                passwordModel.website.ifBlank { "No Website" }
         }
     }
 

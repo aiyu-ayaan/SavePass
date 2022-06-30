@@ -1,9 +1,13 @@
 package com.ab.savepass.ui.activity.main_activity
 
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
+import android.view.WindowManager
 import android.viewbinding.library.activity.viewBinding
+import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.annotation.AttrRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -18,8 +22,10 @@ import com.ab.savepass.NavGraphDirections
 import com.ab.savepass.R
 import com.ab.savepass.databinding.ActivityMainBinding
 import com.ab.savepass.util.currentNavigationFragment
+import com.google.android.material.color.MaterialColors
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
+import kotlin.math.abs
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -55,9 +61,37 @@ class MainActivity : AppCompatActivity() {
             fabAddPassword.setOnClickListener {
                 navigateToDialogFragment()
             }
+            appbarLayout.addOnOffsetChangedListener { _, verticalOffset ->
+                if (abs(verticalOffset) - appbarLayout.totalScrollRange == 0) // collapsed
+                    changeStatusBarToolbarColor(R.attr.bottomBar)
+                else
+                    changeStatusBarToolbarColor(android.viewbinding.library.R.attr.colorSurface)
+
+            }
         }
         onDestinationChange()
     }
+
+    private fun changeStatusBarToolbarColor(@AttrRes colorCode: Int) =
+        this.apply {
+            try {
+                window?.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                window?.statusBarColor = MaterialColors.getColor(
+                    this,
+                    colorCode,
+                    Color.WHITE
+                )
+                binding.toolbar.setBackgroundColor(
+                    MaterialColors.getColor(
+                        this,
+                        colorCode,
+                        Color.WHITE
+                    )
+                )
+            } catch (e: Exception) {
+                Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
 
     private fun onDestinationChange() {
         navController.addOnDestinationChangedListener { _, destination, _ ->

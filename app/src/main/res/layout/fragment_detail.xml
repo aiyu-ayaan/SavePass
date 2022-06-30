@@ -1,95 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="@dimen/grid_1"
-    android:background="?attr/colorSurface"
+    android:fillViewport="true"
     tools:context="com.ab.savepass.ui.fragments.detail.DetailFragment">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlined_text_field_site"
-        style="?attr/textInputFilledStyle"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/grid_2"
-        android:hint="@string/site"
-        app:boxBackgroundColor="?attr/colorSurface"
-        app:boxStrokeColor="@color/mtrl_outlined_stroke_color"
-        app:endIconMode="clear_text">
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/grid_1"
+        android:background="?attr/colorSurface">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_site"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlined_text_field_site"
+            style="?attr/textInputFilledStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:inputType="text|textNoSuggestions" />
+            android:layout_marginTop="@dimen/grid_2"
+            android:hint="@string/site"
+            app:boxBackgroundColor="?attr/colorSurface"
+            app:boxStrokeColor="@color/mtrl_outlined_stroke_color"
+            app:endIconMode="clear_text">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="text|textNoSuggestions" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlined_text_field_user_name"
-        style="?attr/textInputFilledStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/outlined_text_field_site"
-        android:layout_marginTop="@dimen/grid_2"
-        android:hint="@string/name"
-        app:boxBackgroundColor="?attr/colorSurface"
-        app:boxStrokeColor="@color/mtrl_outlined_stroke_color"
-        app:endIconMode="clear_text">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_user_name"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlined_text_field_user_name"
+            style="?attr/textInputFilledStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text|textNoSuggestions" />
+            android:layout_below="@id/outlined_text_field_site"
+            android:layout_marginTop="@dimen/grid_2"
+            android:hint="@string/name"
+            app:boxBackgroundColor="?attr/colorSurface"
+            app:boxStrokeColor="@color/mtrl_outlined_stroke_color"
+            app:endIconMode="clear_text">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text|textNoSuggestions" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/outlined_text_field_password"
-        style="?attr/textInputFilledStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/outlined_text_field_user_name"
-        android:layout_marginTop="@dimen/grid_2"
-        android:hint="@string/password"
-        app:boxBackgroundColor="?attr/colorSurface"
-        app:boxStrokeColor="@color/mtrl_outlined_stroke_color"
-        app:endIconMode="password_toggle">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edit_text_password"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlined_text_field_password"
+            style="?attr/textInputFilledStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword" />
+            android:layout_below="@id/outlined_text_field_user_name"
+            android:layout_marginTop="@dimen/grid_2"
+            android:hint="@string/password"
+            app:boxBackgroundColor="?attr/colorSurface"
+            app:boxStrokeColor="@color/mtrl_outlined_stroke_color"
+            app:endIconMode="password_toggle">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
-        android:id="@+id/button_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/outlined_text_field_password"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="@dimen/grid_2"
-        android:text="@string/done" />
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/outlined_text_field_password"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/grid_2"
+            android:text="@string/done" />
 
-    <Button
-        android:id="@+id/button_cancel"
-        style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/button_save"
-        android:layout_alignBottom="@+id/button_save"
-        android:layout_marginEnd="@dimen/grid_2"
-        android:layout_toStartOf="@+id/button_save"
-        android:text="@string/cancel" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/button_cancel"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button_save"
+            android:layout_alignBottom="@+id/button_save"
+            android:layout_marginEnd="@dimen/grid_2"
+            android:layout_toStartOf="@+id/button_save"
+            android:text="@string/cancel" />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.ab.core.constants.REQUEST_VERIFY_DONE
 import com.ab.core.constants.REQUEST_VERIFY_PIN
 import com.ab.core.room.PasswordModel
 import com.ab.savepass.R
@@ -71,9 +72,11 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private fun FragmentDetailBinding.passwordToggle() {
 //        After the user clicks the button, the password is hidden or shown.
-        if (communicatorViewModel.isAuthenticated.value && viewModel.request == REQUEST_VERIFY_PIN) {
+
+        if (communicatorViewModel.isAuthenticated.value && viewModel.request == REQUEST_VERIFY_DONE) {
             outlinedTextFieldPassword.editText?.inputType =
                 InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            Toast.makeText(requireContext(), "True", Toast.LENGTH_SHORT).show()
             isShowing = false
         }
 
@@ -109,24 +112,27 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             return
         } else
             binding.outlinedTextFieldUserName.error = null
+
         if (binding.outlinedTextFieldPassword.editText?.text.toString().isEmpty()) {
             binding.outlinedTextFieldPassword.error = "Password is required"
             return
         } else
             binding.outlinedTextFieldPassword.error = null
+
         updatePassword(passwordModel)
     }
 
     private fun updatePassword(passwordModel: PasswordModel) {
-        passwordModel.apply {
-            website = binding.outlinedTextFieldSite.editText?.text.toString()
-            username = binding.outlinedTextFieldUserName.editText?.text.toString()
-            password = viewModel.encryptPassword(
-                binding.outlinedTextFieldUserName.editText?.text.toString(),
-                binding.outlinedTextFieldPassword.editText?.text.toString()
-            )!!
-        }
-        viewModel.updatePassword(passwordModel)
+        viewModel.updatePassword(
+            passwordModel.copy(
+                website = binding.outlinedTextFieldSite.editText?.text.toString(),
+                username = binding.outlinedTextFieldUserName.editText?.text.toString(),
+                password = viewModel.encryptPassword(
+                    binding.outlinedTextFieldUserName.editText?.text.toString(),
+                    binding.outlinedTextFieldPassword.editText?.text.toString()
+                )!!
+            )
+        )
         findNavController().navigateUp()
     }
 
