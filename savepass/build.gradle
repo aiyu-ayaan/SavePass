@@ -1,7 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.gms.google-services'
     id 'kotlin-parcelize'
     id "androidx.navigation.safeargs.kotlin"
     id 'dagger.hilt.android.plugin'
@@ -67,7 +66,7 @@ dependencies {
 
 //    Hilt
     implementation("com.google.dagger:hilt-android:$hilt_version")
-    implementation "androidx.browser:browser:$browserVersion"
+    implementation 'androidx.browser:browser:1.4.0'
     kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
 
     // Coroutines

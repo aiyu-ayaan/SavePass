@@ -13,16 +13,13 @@ buildscript{
         recyclerViewVersion = "1.2.1"
         recyclerViewSelectionVersion = "1.1.0"
         viewBindingVersion = "1.0.3"
-        browserVersion = "1.4.0"
         crashlyticsVersion = "2.6.1"
         splashScreenVersion = "1.0.0-rc01"
         bcryptVersion = "1.0"
     }
     dependencies {
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
-        classpath "com.google.gms:google-services:$googleServiceVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
-        classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlyticsVersion"
     }
 }
 
