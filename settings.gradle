@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "SavePass"
-include ':app'
+include ':savepass'
 include ':core'
