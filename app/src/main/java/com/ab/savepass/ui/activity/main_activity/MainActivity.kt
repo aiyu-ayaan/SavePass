@@ -17,7 +17,6 @@ import com.ab.core.constants.PREF_PASSWORD
 import com.ab.savepass.NavGraphDirections
 import com.ab.savepass.R
 import com.ab.savepass.databinding.ActivityMainBinding
-import com.ab.savepass.ui.fragments.check_password.CommunicatorViewModel
 import com.ab.savepass.util.currentNavigationFragment
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -96,15 +95,7 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         if (pref.getString(PREF_PASSWORD, "") != "") {
-            navigateToCheckPassword()
-        }
-    }
-
-    private fun navigateToCheckPassword() {
-        getCurrentFragment()?.let {
-            navController.navigate(
-                NavGraphDirections.actionGlobalCheckPasswordFragment()
-            )
+            communicatorViewModel.isAuthenticated.value = false
         }
     }
 }

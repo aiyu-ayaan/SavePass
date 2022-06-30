@@ -1,4 +1,4 @@
-package com.ab.savepass.ui.fragments.check_password
+package com.ab.savepass.ui.activity.main_activity
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -11,5 +11,6 @@ class CommunicatorViewModel @Inject constructor(
     private val state: SavedStateHandle
 ) : ViewModel() {
 
-    val isAuthenticated = MutableStateFlow(false)
+
+    var isAuthenticated = MutableStateFlow(true)
 }

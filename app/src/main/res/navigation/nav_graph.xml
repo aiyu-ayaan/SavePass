@@ -36,6 +36,13 @@
         <action
             android:id="@+id/action_detailFragment_to_confirmDialog"
             app:destination="@id/confirmDialog" />
+        <action
+            android:id="@+id/action_detailFragment_to_checkPasswordFragment"
+            app:destination="@id/checkPasswordFragment" />
+        <argument
+            android:name="request"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <dialog
         android:id="@+id/confirmDialog"
@@ -92,12 +99,21 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="reuqest"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_checkPasswordFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/detailFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="passwordModel"
+            app:argType="com.ab.core.room.PasswordModel"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
-    <action
-        android:id="@+id/action_global_checkPasswordFragment"
-        app:destination="@id/checkPasswordFragment"
-        app:popUpTo="@id/nav_graph"
-        app:popUpToInclusive="true" />
     <dialog
         android:id="@+id/deleteAllDialogFragment"
         android:name="com.ab.savepass.ui.fragments.about.delete_all.DeleteAllDialogFragment"

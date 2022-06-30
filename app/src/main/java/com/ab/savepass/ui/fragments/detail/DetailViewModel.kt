@@ -18,6 +18,8 @@ class DetailViewModel @Inject constructor(
 ) : ViewModel() {
     val passwordModel = state.get<PasswordModel>("passwordModel")
 
+    val request = state.get<Int>("request")
+
     fun updatePassword(passwordModel: PasswordModel) = viewModelScope.launch {
         repository.updatePassword(passwordModel)
     }

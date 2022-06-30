@@ -1,6 +1,7 @@
 package com.ab.savepass.ui.fragments.detail
 
 import android.os.Bundle
+import android.text.InputType
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -8,11 +9,14 @@ import android.view.View
 import android.viewbinding.library.fragment.viewBinding
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.ab.core.constants.REQUEST_VERIFY_PIN
 import com.ab.core.room.PasswordModel
 import com.ab.savepass.R
 import com.ab.savepass.databinding.FragmentDetailBinding
+import com.ab.savepass.ui.activity.main_activity.CommunicatorViewModel
 import com.google.android.material.transition.MaterialSharedAxis
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,6 +25,8 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private val binding: FragmentDetailBinding by viewBinding()
     private val viewModel by viewModels<DetailViewModel>()
+    private var isShowing: Boolean = true
+    private val communicatorViewModel by activityViewModels<CommunicatorViewModel>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,8 +63,44 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
             buttonSave.setOnClickListener {
                 checkInput(passwordModel)
             }
+
+            passwordToggle()
         }
         setHasOptionsMenu(true)
+    }
+
+    private fun FragmentDetailBinding.passwordToggle() {
+//        After the user clicks the button, the password is hidden or shown.
+        if (communicatorViewModel.isAuthenticated.value && viewModel.request == REQUEST_VERIFY_PIN) {
+            outlinedTextFieldPassword.editText?.inputType =
+                InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            isShowing = false
+        }
+
+
+        outlinedTextFieldPassword.setEndIconOnClickListener {
+            if (isShowing && communicatorViewModel.isAuthenticated.value) {
+                outlinedTextFieldPassword.editText?.inputType =
+                    InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                isShowing = false
+            } else {
+                if (!communicatorViewModel.isAuthenticated.value)
+                    verifyUser()
+                outlinedTextFieldPassword.editText?.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                isShowing = true
+            }
+        }
+    }
+
+    private fun verifyUser() {
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ true)
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, /* forward= */ false)
+        findNavController().navigate(
+            DetailFragmentDirections.actionDetailFragmentToCheckPasswordFragment(
+                REQUEST_VERIFY_PIN, viewModel.passwordModel
+            )
+        )
     }
 
     private fun checkInput(passwordModel: PasswordModel) {
@@ -106,5 +148,11 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     private fun navigateToConfirmDeleteDialog(passwordModel: PasswordModel) {
         val action = DetailFragmentDirections.actionDetailFragmentToConfirmDialog(passwordModel)
         findNavController().navigate(action)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binding.outlinedTextFieldPassword.editText?.inputType =
+            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
     }
 }

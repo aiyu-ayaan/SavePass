@@ -43,8 +43,13 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
             }
             switchFingerPrint.apply {
                 isEnabled = fingerPrintHelperClass.isBiometricSupport()
+                setOnCheckedChangeListener(null)
+                setUpSwitch()
                 setOnCheckedChangeListener { _, isChecked ->
-                    pref.edit().putBoolean(IS_ENABLE_FINGER, isChecked).apply()
+                    fingerPrintHelperClass.openBiometricPrompt()
+                    fingerPrintHelperClass.setAction {
+                        pref.edit().putBoolean(IS_ENABLE_FINGER, isChecked).apply()
+                    }
                 }
             }
             setUpSwitch()
